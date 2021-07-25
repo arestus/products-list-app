@@ -1,11 +1,18 @@
+import { Route, Switch } from 'react-router-dom';
+import ProductsList from './Components/ProductsList';
+import ProductDetailsView from './Components/ProductDetailsView';
 
 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      products-list-app
-    </div>
+      <>
+     <Switch>
+        <Route exact path='/' component={ProductsList} />
+        <Route path="/products/:productid" component={ProductDetailsView} />
+        {/* <Route component={NotFoundView} /> */}
+      </Switch>
+      </>
   );
 }
 
