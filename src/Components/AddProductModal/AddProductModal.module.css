@@ -1,0 +1,9 @@
+.formList {
+  list-style-type: none;
+}
+.formList li {
+  margin-bottom: 10px;
+}
+.sizes {
+  width: 10%;
+}
