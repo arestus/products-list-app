@@ -25,3 +25,6 @@
     padding-right: 85px;
   }
 }
+.productsList {
+  list-style-type: none;
+}

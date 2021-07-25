@@ -10,7 +10,6 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={ProductsList} />
           <Route path="/products/:productid" component={ProductDetailsView} />
-          {/* <Route component={NotFoundView} /> */}
         </Switch>
       </div>
     </>

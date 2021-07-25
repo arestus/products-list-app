@@ -1,4 +1,15 @@
+.productCard {
+  display: flex;
+}
+.productCardImage {
+  padding: 10px;
+}
+
+.productCardDescription {
+  padding: 10px;
+}
+
 .productImage {
-  width: 44px;
-  height: 44px;
+  width: 70px;
+  height: 70px;
 }
