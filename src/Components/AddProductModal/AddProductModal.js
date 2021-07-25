@@ -7,35 +7,30 @@ const AddProductModal = () => {
   const onSubmit = data => console.log(data);
 
   return (
-    <div>
+    <div className={s.form}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <ul className={s.formList}>
           <li>
-            <p>Name</p>
-            <input {...register('productName')} />
+            Product Name: <input {...register('productName')} />
           </li>
           <li>
-            <p>Count</p>
-            <input {...register('productCount')} />
+            Count: <input {...register('productCount')} />
           </li>
           <li>
-            <p>Size</p>
-            <span>Width</span>
+            Size: <span>Width</span>
             <input className={s.sizes} {...register('productWidth')} />
             <span>Height</span>
             <input className={s.sizes} {...register('productHeight')} />
           </li>
           <li>
-            <p>Weight</p>
-            <input {...register('productWeight')} />
+            Weight: <input {...register('productWeight')} />
           </li>
           <li>
-            <p>Commentary</p>
-            <input {...register('productCommentary')} />
+            Commentary: <input {...register('productCommentary')} />
           </li>
         </ul>
         <button type="submit">Add</button>
-        <button>Cancel</button>
+        <button type="reset">Cancel</button>
       </form>
     </div>
   );

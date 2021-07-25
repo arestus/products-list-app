@@ -15,7 +15,9 @@ const ButtonAddProduct = () => {
   return (
     <>
       <div className="buttonAddProductContainer">
-        <button>New Product</button>
+        <button type="button" onClick={onToggleModal}>
+          New Product
+        </button>
       </div>
       {isModalAddProductOpen && (
         <Modal onClose={onToggleModal}>

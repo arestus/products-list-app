@@ -9,7 +9,7 @@ const ProductList = () => {
       <div className={s.container}>
         Home
         <ButtonAddProduct />
-        <AddProductModal />
+        {/* <AddProductModal /> */}
       </div>
     </>
   );

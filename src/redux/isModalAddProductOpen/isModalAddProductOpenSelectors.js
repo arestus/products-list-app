@@ -1,1 +1,1 @@
-export const onModalAddProductOpen = state => state.modal;
+export const onModalAddProductOpen = state => state.isAddProductModalOpen;
