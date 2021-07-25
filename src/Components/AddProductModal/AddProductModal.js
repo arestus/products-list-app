@@ -1,10 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import s from './AddProductModal.module.css';
+import { modalAddProductOpen } from '../../redux/isModalAddProductOpen/isModalAddProductOpenActions';
 
 const AddProductModal = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = data => console.log(data);
+
+  const dispatch = useDispatch();
+  const onToggleModal = () => dispatch(modalAddProductOpen());
 
   return (
     <div className={s.form}>
@@ -30,7 +35,7 @@ const AddProductModal = () => {
           </li>
         </ul>
         <button type="submit">Add</button>
-        <button type="reset">Cancel</button>
+        <button onClick={onToggleModal}>Cancel</button>
       </form>
     </div>
   );
