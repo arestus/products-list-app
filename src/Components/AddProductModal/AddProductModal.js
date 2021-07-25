@@ -11,6 +11,12 @@ const AddProductModal = () => {
   const dispatch = useDispatch();
   const onToggleModal = () => dispatch(modalAddProductOpen());
 
+  //   const submitForm = async event => {
+  //     event.preventDefault();
+
+  //     await dispatch(addProduct());
+  //   };
+
   return (
     <div className={s.form}>
       <form onSubmit={handleSubmit(onSubmit)}>
