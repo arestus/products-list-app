@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import finance from './finance/financeReducer';
+import products from './products/productsReducer';
+import { isAddProductModalOpen } from './isModalAddProductOpen/isModalAddProductReducer';
 
 const store = configureStore({
   reducer: {
     products,
+    isAddProductModalOpen,
   },
 });
 
