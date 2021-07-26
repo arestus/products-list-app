@@ -28,3 +28,7 @@
 .productsList {
   list-style-type: none;
 }
+.productImage {
+  width: 70px;
+  height: 70px;
+}

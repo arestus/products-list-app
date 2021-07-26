@@ -18,16 +18,7 @@ const AddProductModal = () => {
   };
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = ({ productName, count, weight, comments, imageUrl, size }) =>
-    addProduct({
-      productName,
-      count,
-      size,
-      weight,
-      comments,
-      imageUrl,
-      id: uuidv4(),
-    });
+  const onSubmit = data => console.log(data);
 
   const dispatch = useDispatch();
   const onToggleModal = () => dispatch(modalAddProductOpen());

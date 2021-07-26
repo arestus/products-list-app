@@ -1,43 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import ButtonAddProduct from '../ButtonAddProductModal/ButtonAddProductModal';
 import s from './ProductsList.module.css';
-import firebase from '../../firebase';
+import { useSelector, useDispatch } from 'react-redux';
+import { products } from '../../redux/products/productsSelectors';
 import ProductCard from '../ProductCard/ProductCard';
+import { getProducts } from '../../redux/products/productsOperations';
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const ref = firebase.firestore().collection('products');
-  useEffect(() => {
-    function getProducts() {
-      setLoading(true);
-      ref.get().then(item => {
-        const items = item.docs.map(doc => doc.data());
-        setProducts(items);
-        setLoading(false);
-      });
-    }
-
-    getProducts();
-  }, []);
-
-  function deleteProduct(product) {
-    ref
-      .doc(product.id)
-      .delete()
-      .catch(err => {
-        console.error(err);
-      });
-  }
-
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
+  const productsList = useSelector(products);
+  console.log(productsList);
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(getProducts()), [dispatch]);
 
   return (
     <>
       <ul className={s.productsList}>
-        {products.map(({ id, productName, count, comments, weight, imageUrl, size }) => (
+        {productsList.map(({ id, productName, count, comments, weight, imageUrl, size }) => (
           <li key={id}>
             <ProductCard
               imageUrl={imageUrl}
@@ -46,7 +24,6 @@ const ProductList = () => {
               comments={comments}
               size={size}
               weight={weight}
-              deleteProduct={deleteProduct}
             />
           </li>
         ))}

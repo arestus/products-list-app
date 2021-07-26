@@ -1,6 +1,6 @@
 import s from './ProductCard.module.css';
 
-const ProductCard = ({ id, productName, count, comments, imageUrl, deleteProduct }) => (
+const ProductCard = ({ productName, count, comments, imageUrl }) => (
   <div className={s.productCard}>
     <div className={s.productCardImage}>
       <img className={s.productImage} src={imageUrl} alt={productName} />
@@ -9,7 +9,6 @@ const ProductCard = ({ id, productName, count, comments, imageUrl, deleteProduct
       <h3>Product name: {productName}</h3>
       <p>Count: {count}</p>
       <p>Comments: {comments}</p>
-      <button onClick={() => deleteProduct(id)}>X</button>
     </div>
   </div>
 );
