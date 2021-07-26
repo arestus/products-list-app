@@ -3,11 +3,15 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import s from './AddProductModal.module.css';
 import { modalAddProductOpen } from '../../redux/isModalAddProductOpen/isModalAddProductOpenActions';
+import { addProduct } from '../../redux/products/productsOperations';
 // import { v4 as uuidv4 } from 'uuid';
 
 const AddProductModal = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = async (data, e) => {
+    // e.preventDefault();
+    await dispatch(addProduct(data));
+  };
 
   const dispatch = useDispatch();
   const onToggleModal = () => dispatch(modalAddProductOpen());
