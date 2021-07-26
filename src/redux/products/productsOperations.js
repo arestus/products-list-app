@@ -28,8 +28,6 @@ export const addProduct = product => async dispatch => {
 
   try {
     const { data } = await axios.post('/products', product);
-    console.log('data add', data);
-
     dispatch(addProductSuccess(data));
   } catch (error) {
     dispatch(addProductError(error.message));

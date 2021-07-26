@@ -10,7 +10,6 @@ const ProductList = () => {
   const productsList = useSelector(products);
   const isLoading = useSelector(isLoadingProducts);
 
-  console.log(isLoading);
   const dispatch = useDispatch();
 
   const onDeleteProduct = id => {

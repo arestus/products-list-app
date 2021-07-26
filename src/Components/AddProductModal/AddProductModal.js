@@ -9,7 +9,7 @@ import { addProduct } from '../../redux/products/productsOperations';
 const AddProductModal = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data, e) => {
-    // e.preventDefault();
+    e.preventDefault();
     await dispatch(addProduct(data));
   };
 

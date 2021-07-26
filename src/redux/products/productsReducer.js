@@ -7,9 +7,10 @@ import {
   addProductError,
   getProductsRequest,
   getProductsError,
-  deleteProductRequest,
+  // deleteProductRequest,
   deleteProductSuccess,
-  deleteProductError,
+  // deleteProductError,
+  changeFilter,
 } from './productsActions';
 
 const products = createReducer([], {
@@ -27,7 +28,12 @@ const isLoadingProducts = createReducer(true, {
   [addProductError]: () => false,
 });
 
+const filter = createReducer('', {
+  [changeFilter]: (_, { payload }) => payload,
+});
+
 export default combineReducers({
   products,
   isLoadingProducts,
+  filter,
 });
