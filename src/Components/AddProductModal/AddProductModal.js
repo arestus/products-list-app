@@ -3,20 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import s from './AddProductModal.module.css';
 import { modalAddProductOpen } from '../../redux/isModalAddProductOpen/isModalAddProductOpenActions';
-import firebase from '../../firebase';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 const AddProductModal = () => {
-  const ref = firebase.firestore().collection('products');
-  const addProduct = newProduct => {
-    ref
-      .doc(newProduct.id)
-      .set(newProduct)
-      .catch(e => {
-        console.log(e);
-      });
-  };
-
   const { register, handleSubmit } = useForm();
   const onSubmit = data => console.log(data);
 

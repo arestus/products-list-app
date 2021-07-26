@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ButtonAddProduct from '../ButtonAddProductModal/ButtonAddProductModal';
 import s from './ProductsList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
