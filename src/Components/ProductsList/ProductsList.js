@@ -7,9 +7,8 @@ import ProductCard from '../ProductCard/ProductCard';
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const ref = firebase.firestore().collection('products');
   useEffect(() => {
-    const ref = firebase.firestore().collection('products');
     function getProducts() {
       setLoading(true);
       ref.get().then(item => {
@@ -22,13 +21,22 @@ const ProductList = () => {
     getProducts();
   }, []);
 
+  function deleteProduct(product) {
+    ref
+      .doc(product.id)
+      .delete()
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   if (loading) {
     return <h1>Loading...</h1>;
   }
 
   return (
     <>
-      <ul className={s.container}>
+      <ul className={s.productsList}>
         {products.map(({ id, productName, count, comments, weight, imageUrl, size }) => (
           <li key={id}>
             <ProductCard
@@ -38,6 +46,7 @@ const ProductList = () => {
               comments={comments}
               size={size}
               weight={weight}
+              deleteProduct={deleteProduct}
             />
           </li>
         ))}
