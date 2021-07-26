@@ -7,11 +7,15 @@ import {
   addProductError,
   getProductsRequest,
   getProductsError,
+  deleteProductRequest,
+  deleteProductSuccess,
+  deleteProductError,
 } from './productsActions';
 
 const products = createReducer([], {
   [getProductsSuccess]: (_, { payload }) => payload,
   [addProductSuccess]: (state, { payload }) => [...state, payload],
+  [deleteProductSuccess]: (state, { payload }) => state.filter(({ id }) => id !== payload),
 });
 
 const isLoadingProducts = createReducer(true, {

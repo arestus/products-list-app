@@ -1,15 +1,21 @@
 import React from 'react';
 import ButtonAddProduct from '../ButtonAddProductModal/ButtonAddProductModal';
 import s from './ProductsList.module.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { products, isLoadingProducts } from '../../redux/products/productsSelectors';
 import ProductCard from '../ProductCard/ProductCard';
+import { deleteProduct } from '../../redux/products/productsOperations';
 
 const ProductList = () => {
   const productsList = useSelector(products);
   const isLoading = useSelector(isLoadingProducts);
 
   console.log(isLoading);
+  const dispatch = useDispatch();
+
+  const onDeleteProduct = id => {
+    dispatch(deleteProduct(id));
+  };
 
   return (
     <>
@@ -26,6 +32,7 @@ const ProductList = () => {
                 comments={comments}
                 size={size}
                 weight={weight}
+                deleteProduct={() => onDeleteProduct(id)}
               />
             </li>
           ))

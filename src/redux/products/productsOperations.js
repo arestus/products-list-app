@@ -5,6 +5,9 @@ import {
   addProductRequest,
   addProductSuccess,
   addProductError,
+  deleteProductRequest,
+  deleteProductSuccess,
+  deleteProductError,
 } from './productsActions';
 import axios from 'axios';
 
@@ -24,13 +27,22 @@ export const addProduct = product => async dispatch => {
   dispatch(addProductRequest());
 
   try {
-    const {
-      data: { data },
-    } = await axios.post('/products', product);
+    const { data } = await axios.post('/products', product);
     console.log('data add', data);
 
     dispatch(addProductSuccess(data));
   } catch (error) {
     dispatch(addProductError(error.message));
+  }
+};
+
+export const deleteProduct = id => async dispatch => {
+  dispatch(deleteProductRequest());
+
+  try {
+    await axios.delete(`/products/${id}`);
+    dispatch(deleteProductSuccess(id));
+  } catch (error) {
+    dispatch(deleteProductError(error.message));
   }
 };
