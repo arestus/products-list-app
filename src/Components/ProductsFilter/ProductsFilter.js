@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './ProductsFilter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFilter } from '../../redux/products/productsReducer';
+import { changeFilter } from '../../redux/products/productsActions';
 import { getFilter } from '../../redux/products/productsSelectors';
 
 export default function TodoFilter() {

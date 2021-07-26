@@ -2,9 +2,10 @@ import React from 'react';
 import ButtonAddProduct from '../ButtonAddProductModal/ButtonAddProductModal';
 import s from './ProductsList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { products, isLoadingProducts } from '../../redux/products/productsSelectors';
+import { products, isLoadingProducts, getVisibleProducts } from '../../redux/products/productsSelectors';
 import ProductCard from '../ProductCard/ProductCard';
 import { deleteProduct } from '../../redux/products/productsOperations';
+import ProductsFilter from '../ProductsFilter';
 
 const ProductList = () => {
   const productsList = useSelector(products);
@@ -36,8 +37,9 @@ const ProductList = () => {
             </li>
           ))
         )}
+        <ProductsFilter />
+        <ButtonAddProduct />
       </ul>
-      <ButtonAddProduct />
     </>
   );
 };
