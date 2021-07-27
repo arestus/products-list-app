@@ -9,6 +9,7 @@ const AddProductModal = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data, e) => {
     e.preventDefault();
+
     await dispatch(addProduct(data));
   };
 

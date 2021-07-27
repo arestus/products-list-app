@@ -11,6 +11,7 @@ import {
   deleteProductSuccess,
   // deleteProductError,
   changeFilter,
+  changeSelect,
 } from './productsActions';
 
 const products = createReducer([], {
@@ -32,8 +33,13 @@ const filter = createReducer('', {
   [changeFilter]: (_, { payload }) => payload,
 });
 
+const select = createReducer('productName', {
+  [changeSelect]: (_, { payload }) => payload,
+});
+
 export default combineReducers({
   products,
   isLoadingProducts,
   filter,
+  select,
 });

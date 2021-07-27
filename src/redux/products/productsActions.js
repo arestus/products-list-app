@@ -13,5 +13,6 @@ export const addProductSuccess = createAction('products/addProductSuccess');
 export const addProductError = createAction('products/addProductError');
 
 export const changeFilter = createAction('products/changeFilter');
+export const changeSelect = createAction('products/changeSelect');
 
 // eslint-disable-next-line import/no-anonymous-default-export

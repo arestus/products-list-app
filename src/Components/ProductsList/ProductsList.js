@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonAddProduct from '../ButtonAddProductModal/ButtonAddProductModal';
 import s from './ProductsList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { products, isLoadingProducts, getVisibleProducts } from '../../redux/products/productsSelectors';
+import { isLoadingProducts, getVisibleProducts } from '../../redux/products/productsSelectors';
 import ProductCard from '../ProductCard/ProductCard';
 import { deleteProduct } from '../../redux/products/productsOperations';
 import ProductsFilter from '../ProductsFilter';

@@ -1,19 +1,27 @@
 import React from 'react';
 import s from './ProductsFilter.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFilter } from '../../redux/products/productsActions';
-import { getFilter } from '../../redux/products/productsSelectors';
+import { changeFilter, changeSelect } from '../../redux/products/productsActions';
+import { getFilter, getSelect } from '../../redux/products/productsSelectors';
 
 export default function TodoFilter() {
   const dispatch = useDispatch();
   const value = useSelector(getFilter);
+  const name = useSelector(getSelect);
 
-  const onChange = e => dispatch(changeFilter(e.target.value));
+  console.log(name);
+
+  const onChangeInput = e => dispatch(changeFilter(e.target.value));
+  const onChangeSelect = e => dispatch(changeSelect(e.target.value));
 
   return (
     <div className={s.productFilter}>
       <p className={s.productFilterLabel}>Фильтр по содержимому</p>
-      <input type="text" className={s.productFilterInput} value={value} onChange={onChange} />
+      <select onChange={onChangeSelect}>
+        <option value="productName">Product Name</option>
+        <option value="count">Count</option>
+      </select>
+      <input type="text" className={s.productFilterInput} name={name} value={value} onChange={onChangeInput} />
     </div>
   );
 }
