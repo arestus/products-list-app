@@ -8,8 +8,9 @@
   flex-direction: column;
   align-items: center;
   min-height: auto;
-  width: 500px;
-  padding: 20px 5px;
+  width: 100%;
+  height: 600px;
+  padding: 30px 10px;
   border: 2px solid red;
 
   background-color: white;
@@ -18,11 +19,44 @@
 }
 
 .formList {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
+  width: 100%;
+  float: left;
 }
-.formList li {
-  margin-bottom: 10px;
+.formList div {
+  margin-bottom: 30px;
 }
-.sizes {
-  width: 10%;
+
+.formElement {
+  clear: both;
+  text-align: right;
+  line-height: 25px;
+  height: 50px;
+}
+
+.formElement label {
+  float: left;
+  padding-right: 10px;
+}
+
+.formButtonAdd {
+  border-radius: 30px;
+  height: 50px;
+  width: 120px;
+  margin-right: 55px;
+}
+.formButtonCancel {
+  border-radius: 30px;
+  height: 50px;
+  width: 120px;
+}
+.formButtonAdd:hover {
+  cursor: pointer;
+  background-color: green;
+}
+.formButtonCancel:hover {
+  cursor: pointer;
+  background-color: red;
 }
