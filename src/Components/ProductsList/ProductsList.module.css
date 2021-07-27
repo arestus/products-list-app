@@ -27,8 +27,47 @@
 }
 .productsList {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
+.productsList li {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
 .productImage {
   width: 70px;
   height: 70px;
+}
+.buttonDelete {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.buttonDelete:hover {
+  background-color: yellow;
+}
+.productListCard {
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px solid red;
+  width: 400px;
+  height: 200px;
+}
+.cardLink {
+  text-decoration: none;
+  color: black;
+}
+.productListCard:hover {
+  transition-duration: 0.2s;
+  transition-delay: 0.5s;
+  transition: all 1s ease;
+  transform: scale(1.1);
+}
+.filterAndAdd {
+  display: flex;
+  /* margin-left: 50px; */
+  justify-content: space-around;
+  align-items: baseline;
 }

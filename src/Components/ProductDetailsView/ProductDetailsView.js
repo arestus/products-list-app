@@ -15,7 +15,7 @@ const ProductDetailsView = () => {
 
   const product = useSelector(state => state.products.currentProduct);
 
-  const { imageUrl, productName, size, count, comments, weight } = product;
+  const { imageUrl, productName, count, comments, weight } = product;
 
   return (
     <>
@@ -26,8 +26,8 @@ const ProductDetailsView = () => {
           <ul className={s.detailsList}>
             <li>Product name: {productName}</li>
             <li>Count: {count}</li>
-            {/* <li>Size: {height}</li> */}
-            {/* <li>Size: {width}</li> */}
+            {/* {/* <li>Height: {size}</li> */}
+            {/* <li>Width: {size}</li> */}
             <li>Weight: {weight}</li>
             <li>Comments: {comments}</li>
             <button>Edit</button>

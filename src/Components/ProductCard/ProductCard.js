@@ -1,6 +1,6 @@
 import s from './ProductCard.module.css';
 
-const ProductCard = ({ productName, count, comments, imageUrl, deleteProduct }) => (
+const ProductCard = ({ productName, count, comments, imageUrl }) => (
   <div className={s.productCard}>
     <div className={s.productCardImage}>
       <img className={s.productImage} src={imageUrl} alt={productName} />

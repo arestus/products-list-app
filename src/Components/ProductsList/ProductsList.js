@@ -12,6 +12,8 @@ const ProductList = () => {
   const productsList = useSelector(getVisibleProducts);
   const isLoading = useSelector(isLoadingProducts);
 
+  console.log(productsList);
+
   const dispatch = useDispatch();
   const onDeleteProduct = id => {
     const conf = window.confirm(`Are you sure?`);
@@ -28,26 +30,30 @@ const ProductList = () => {
         {isLoading ? (
           <div>Загрузка...</div>
         ) : (
-          productsList.map(({ id, productName, count, comments, weight, imageUrl, size }) => (
-            <li key={id}>
-              <Link to={`/products/${id}`}>
+          productsList.map(({ id, productName, count, Comments, weight, imageUrl, size }) => (
+            <li key={id} className={s.productListCard}>
+              <Link className={s.cardLink} to={`/products/${id}`}>
                 <ProductCard
                   imageUrl={imageUrl}
                   productName={productName}
                   count={count}
-                  comments={comments}
+                  Comments={Comments}
                   size={size}
                   weight={weight}
                   // deleteProduct={() => onDeleteProduct(id)}
                 />
               </Link>
-              <button onClick={() => onDeleteProduct(id)}></button>
+              <button className={s.buttonDelete} onClick={() => onDeleteProduct(id)}>
+                Удалить
+              </button>
             </li>
           ))
         )}
+      </ul>
+      <div className={s.filterAndAdd}>
         <ProductsFilter />
         <ButtonAddProduct />
-      </ul>
+      </div>
     </>
   );
 };

@@ -1,0 +1,8 @@
+.buttonAddProductContainer {
+  padding: 10px;
+}
+.buttonText {
+  margin-top: auto;
+  height: 46px;
+  cursor: pointer;
+}

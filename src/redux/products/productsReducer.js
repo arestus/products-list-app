@@ -7,12 +7,8 @@ import {
   addProductError,
   getProductsRequest,
   getProductsError,
-  // deleteProductRequest,
   deleteProductSuccess,
-  // deleteProductError,
-  // getCurrentProductRequest,
   getCurrentProductSuccess,
-  // getCurrentProductError,
   changeFilter,
   changeSelect,
 } from './productsActions';
@@ -21,7 +17,6 @@ const products = createReducer([], {
   [getProductsSuccess]: (_, { payload }) => payload,
   [addProductSuccess]: (state, { payload }) => [...state, payload],
   [deleteProductSuccess]: (state, { payload }) => state.filter(({ id }) => id !== payload),
-  // [getCurrentProductSuccess]: (state, { payload }) => state.filter(({ id }) => id !== payload),
 });
 
 const currentProduct = createReducer(
