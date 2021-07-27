@@ -1,7 +1,23 @@
 .image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 .detailsList {
   list-style-type: none;
+}
+.detailsList li {
+  margin-bottom: 30px;
+}
+.detailsListElement {
+  font-size: 24px;
+}
+.productDetails {
+  margin-top: 50px;
+}
+.button {
+  border-radius: 30px;
+  margin-top: auto;
+  height: 46px;
+  width: 100px;
+  cursor: pointer;
 }

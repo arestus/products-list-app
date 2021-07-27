@@ -15,24 +15,21 @@ const ProductDetailsView = () => {
 
   const product = useSelector(state => state.products.currentProduct);
 
-  const { imageUrl, productName, count, comments, weight } = product;
+  const { imageUrl, productName, count, comments, weight, size } = product;
 
   return (
     <>
       {product && (
-        <>
-          <div>Details</div>
+        <div className={s.productDetails}>
           <img src={imageUrl} className={s.image} alt={productName} />
+          <h2>Product name: {productName}</h2>
           <ul className={s.detailsList}>
-            <li>Product name: {productName}</li>
-            <li>Count: {count}</li>
-            {/* {/* <li>Height: {size}</li> */}
-            {/* <li>Width: {size}</li> */}
-            <li>Weight: {weight}</li>
-            <li>Comments: {comments}</li>
-            <button>Edit</button>
+            <li className={s.detailsListElement}>Count: {count}</li>
+            <li className={s.detailsListElement}>Weight: {weight}</li>
+            <li className={s.detailsListElement}>Comments: {comments}</li>
+            <button className={s.button}>Edit</button>
           </ul>
-        </>
+        </div>
       )}
     </>
   );

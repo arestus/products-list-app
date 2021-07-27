@@ -40,7 +40,6 @@ const ProductList = () => {
                   Comments={Comments}
                   size={size}
                   weight={weight}
-                  // deleteProduct={() => onDeleteProduct(id)}
                 />
               </Link>
               <div className={s.deleteButtonContainer}>
