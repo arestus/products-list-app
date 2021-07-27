@@ -8,5 +8,5 @@ export const getVisibleProducts = createSelector([products, getFilter], (product
   console.log('Составляю новый массив видимых туду');
   const normalizedFilter = filter.toLowerCase();
 
-  return products.filter(({ description }) => description.toLowerCase().includes(normalizedFilter));
+  return products.filter(({ productName }) => productName.toLowerCase().includes(normalizedFilter));
 });

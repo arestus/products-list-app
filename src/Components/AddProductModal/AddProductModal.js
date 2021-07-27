@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import s from './AddProductModal.module.css';
 import { modalAddProductOpen } from '../../redux/isModalAddProductOpen/isModalAddProductOpenActions';
 import { addProduct } from '../../redux/products/productsOperations';
-// import { v4 as uuidv4 } from 'uuid';
 
 const AddProductModal = () => {
   const { register, handleSubmit } = useForm();

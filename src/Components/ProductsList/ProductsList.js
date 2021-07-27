@@ -8,7 +8,7 @@ import { deleteProduct } from '../../redux/products/productsOperations';
 import ProductsFilter from '../ProductsFilter';
 
 const ProductList = () => {
-  const productsList = useSelector(products);
+  const productsList = useSelector(getVisibleProducts);
   const isLoading = useSelector(isLoadingProducts);
 
   const dispatch = useDispatch();
