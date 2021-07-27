@@ -6,6 +6,7 @@ import { isLoadingProducts, getVisibleProducts } from '../../redux/products/prod
 import ProductCard from '../ProductCard/ProductCard';
 import { deleteProduct } from '../../redux/products/productsOperations';
 import ProductsFilter from '../ProductsFilter';
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
   const productsList = useSelector(getVisibleProducts);
@@ -29,15 +30,18 @@ const ProductList = () => {
         ) : (
           productsList.map(({ id, productName, count, comments, weight, imageUrl, size }) => (
             <li key={id}>
-              <ProductCard
-                imageUrl={imageUrl}
-                productName={productName}
-                count={count}
-                comments={comments}
-                size={size}
-                weight={weight}
-                deleteProduct={() => onDeleteProduct(id)}
-              />
+              <Link to={`/products/${id}`}>
+                <ProductCard
+                  imageUrl={imageUrl}
+                  productName={productName}
+                  count={count}
+                  comments={comments}
+                  size={size}
+                  weight={weight}
+                  // deleteProduct={() => onDeleteProduct(id)}
+                />
+              </Link>
+              <button onClick={() => onDeleteProduct(id)}></button>
             </li>
           ))
         )}

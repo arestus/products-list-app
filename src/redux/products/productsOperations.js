@@ -8,6 +8,9 @@ import {
   deleteProductRequest,
   deleteProductSuccess,
   deleteProductError,
+  getCurrentProductRequest,
+  getCurrentProductSuccess,
+  getCurrentProductError,
 } from './productsActions';
 import axios from 'axios';
 
@@ -42,5 +45,16 @@ export const deleteProduct = id => async dispatch => {
     dispatch(deleteProductSuccess(id));
   } catch (error) {
     dispatch(deleteProductError(error.message));
+  }
+};
+
+export const getCurrentProduct = id => async dispatch => {
+  dispatch(getCurrentProductRequest());
+
+  try {
+    const { data } = await axios.get(`/products/${id}`);
+    dispatch(getCurrentProductSuccess(data));
+  } catch (error) {
+    dispatch(getCurrentProductError(error.message));
   }
 };

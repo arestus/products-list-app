@@ -12,6 +12,10 @@ export const addProductRequest = createAction('products/addProductRequest');
 export const addProductSuccess = createAction('products/addProductSuccess');
 export const addProductError = createAction('products/addProductError');
 
+export const getCurrentProductRequest = createAction('products/getCurrentProductRequest');
+export const getCurrentProductSuccess = createAction('products/getCurrentProductSuccess');
+export const getCurrentProductError = createAction('products/getCurrentProductError');
+
 export const changeFilter = createAction('products/changeFilter');
 export const changeSelect = createAction('products/changeSelect');
 

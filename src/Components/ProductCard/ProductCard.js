@@ -9,7 +9,7 @@ const ProductCard = ({ productName, count, comments, imageUrl, deleteProduct }) 
       <h3>Product name: {productName}</h3>
       <p>Count: {count}</p>
       <p>Comments: {comments}</p>
-      <button onClick={deleteProduct}>Удалить</button>
+      {/* <button onClick={deleteProduct}>Удалить</button> */}
     </div>
   </div>
 );
