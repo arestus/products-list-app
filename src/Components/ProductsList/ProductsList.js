@@ -12,9 +12,13 @@ const ProductList = () => {
   const isLoading = useSelector(isLoadingProducts);
 
   const dispatch = useDispatch();
-
   const onDeleteProduct = id => {
-    dispatch(deleteProduct(id));
+    const conf = window.confirm(`Are you sure?`);
+    if (conf) {
+      dispatch(deleteProduct(id));
+    } else {
+      alert(`ok you don't want to delete this`);
+    }
   };
 
   return (

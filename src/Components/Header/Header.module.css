@@ -1,0 +1,20 @@
+.header {
+  background-color: blue;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.headerLink {
+  text-decoration: none;
+}
