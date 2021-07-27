@@ -2,6 +2,7 @@
   padding: 10px;
 }
 .buttonText {
+  border-radius: 100px;
   margin-top: auto;
   height: 46px;
   cursor: pointer;

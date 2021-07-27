@@ -39,8 +39,11 @@
   width: 70px;
   height: 70px;
 }
+.deleteButtonContainer {
+  text-align: center;
+}
 .buttonDelete {
-  width: 100%;
+  width: 30%;
   height: 30px;
   border-radius: 10px;
   cursor: pointer;

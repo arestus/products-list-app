@@ -43,9 +43,11 @@ const ProductList = () => {
                   // deleteProduct={() => onDeleteProduct(id)}
                 />
               </Link>
-              <button className={s.buttonDelete} onClick={() => onDeleteProduct(id)}>
-                Удалить
-              </button>
+              <div className={s.deleteButtonContainer}>
+                <button className={s.buttonDelete} onClick={() => onDeleteProduct(id)}>
+                  Удалить
+                </button>
+              </div>
             </li>
           ))
         )}

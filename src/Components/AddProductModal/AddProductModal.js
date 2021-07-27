@@ -10,7 +10,6 @@ const AddProductModal = () => {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm();
   const onSubmit = async (data, e) => {
     e.preventDefault();
@@ -36,8 +35,8 @@ const AddProductModal = () => {
               {...register('productName', {
                 required: 'Укажите название товара',
                 minLength: {
-                  value: 5,
-                  message: 'Название должно быть длинне 5 символов',
+                  value: 3,
+                  message: 'Название должно быть длинне 2 символов',
                 },
                 maxLength: {
                   value: 20,
